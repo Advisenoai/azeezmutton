@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azeez Mutton House — Farm-Fresh, Door-to-Door</title>
+  <meta name="description" content="Bengaluru's freshest mutton — slaughtered same-day, hand-trimmed, delivered in under 60 minutes. 100% Halal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}" />
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="bone">🥩</span>
+      Azeez <span class="house">Mutton House</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+    </ul>
+
+    <div style="display:flex;gap:.7rem;align-items:center;">
+      <a href="tel:+919876543210" class="btn btn-outline" style="font-size:.82rem;padding:.5rem 1.1rem;">📞 Call to Order</a>
+      <a href="#menu" class="btn btn-red">Order Now →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Copy -->
+      <div class="hero-copy">
+        <span class="hero-eyebrow">🌿 100% Halal &nbsp;·&nbsp; Bengaluru's Freshest</span>
+
+        <h1>Fresh mutton.<br /><em>Right at your door.</em></h1>
+
+        <p class="hero-sub">
+          Slaughtered every morning at our licensed facility — never frozen, never yesterday's.
+          Hand-trimmed cuts delivered to your kitchen in under 60 minutes.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-red">Browse Cuts ↓</a>
+          <a href="#process" class="btn btn-outline">See how it works</a>
+        </div>
+
+        <p class="hero-trust">
+          <span>⭐⭐⭐⭐⭐</span>
+          <span>Trusted by <strong>50,000+</strong> families across Bengaluru</span>
+        </p>
+      </div>
+
+      <!-- Visual card -->
+      <div class="hero-visual">
+        <div class="meat-card">
+          <span class="meat-emoji">🥩</span>
+          <p class="meat-card-label">Bone-in Curry Cut</p>
+          <p class="meat-card-sub">Slaughtered at 6 AM · Ready by 8 AM</p>
+
+          <div class="freshness-bar">
+            <div class="freshness-fill"></div>
+          </div>
+          <div class="freshness-label">
+            <span>Freshness</span>
+            <span>97%</span>
+          </div>
+
+          <span class="delivery-badge">🛵 Delivers in &lt; 60 min</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ STATS ══════════════ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      {% for s in stats %}
+      <div>
+        <div class="stat-value">{{ s.value }}</div>
+        <div class="stat-label">{{ s.label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MENU ══════════════ -->
+<section id="menu">
+  <div class="container">
+    <p class="section-eyebrow">Our Cuts</p>
+    <h2 class="section-title">What do you fancy today?</h2>
+    <p class="section-sub">Every cut priced transparently — no hidden charges, no inflated "clean weight" tricks.</p>
+
+    <div class="menu-grid">
+      {% for item in menu %}
+      <div class="menu-card">
+
+        <div class="menu-top">
+          <span class="menu-emoji">{{ item.emoji }}</span>
+          {% if item.tag %}
+          <span class="menu-tag">{{ item.tag }}</span>
+          {% endif %}
+        </div>
+
+        <p class="menu-name">{{ item.name }}</p>
+        <p class="menu-desc">{{ item.description }}</p>
+
+        <div class="menu-footer">
+          <span class="menu-weight">📦 {{ item.weight }}</span>
+          <span class="menu-price">₹{{ item.price }} <span>/ pack</span></span>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="#cta-banner" class="btn btn-red" style="font-size:.95rem;padding:.75rem 2rem;">
+        📱 Order via WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ HOW IT WORKS ══════════════ -->
+<section id="process">
+  <div class="container">
+    <p class="section-eyebrow">The Azeez Promise</p>
+    <h2 class="section-title">Farm to your kitchen — the right way.</h2>
+    <p class="section-sub">We've refined this process over 12 years. No shortcuts, ever.</p>
+
+    <div class="process-steps">
+      {% for step in process %}
+      <div class="process-step">
+        <div class="step-num">{{ step.step }}</div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIALS ══════════════ -->
+<section id="testimonials">
+  <div class="container">
+    <p class="section-eyebrow">What Families Say</p>
+    <h2 class="section-title">Real kitchens. Real flavour.</h2>
+    <p class="section-sub">We let the meat — and our customers — do the talking.</p>
+
+    <div class="tgrid" style="margin-top:3rem;">
+      {% for t in testimonials %}
+      <div class="tcard">
+        <blockquote>{{ t.quote }}</blockquote>
+        <div class="tcard-author">
+          <div class="avatar">{{ t.avatar }}</div>
+          <div>
+            <div class="author-name">{{ t.author }}</div>
+            <div class="author-local">📍 {{ t.locality }}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA BANNER ══════════════ -->
+<section id="cta-banner">
+  <div class="container">
+    <h2>Your biryani deserves the best.</h2>
+    <p>Order before 10 AM — get it delivered by lunch. It's that simple.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/919876543210" target="_blank" rel="noopener"
+         class="btn btn-white" style="font-size:1rem;padding:.8rem 2.2rem;">
+        💬 WhatsApp Order
+      </a>
+      <a href="tel:+919876543210"
+         class="btn" style="background:rgba(255,255,255,.18);color:#fff;font-size:1rem;padding:.8rem 2.2rem;">
+        📞 Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="container">
+    <p>
+      🥩 &nbsp;<strong>Azeez Mutton House</strong>&nbsp; ·&nbsp;
+      Est. 2012 &nbsp;·&nbsp; Bengaluru, Karnataka &nbsp;·&nbsp;
+      FSSAI Lic. 10012345000001 &nbsp;·&nbsp;
+      Built with <a href="https://fastapi.tiangolo.com" target="_blank" rel="noopener">FastAPI</a>
+      &amp; <a href="https://jinja.palletsprojects.com" target="_blank" rel="noopener">Jinja2</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
