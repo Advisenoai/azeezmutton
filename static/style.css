@@ -96,7 +96,7 @@ nav {
 }
 
 .nav-logo .bone { font-size: 1.3rem; }
-.nav-logo .house { color: var(--red); }
+.nav-logo .brand { color: var(--red); }
 
 .nav-links {
   display: flex;
