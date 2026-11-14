@@ -78,7 +78,7 @@ PROCESS = [
     {
         "step": "04",
         "title": "At your door",
-        "body": "Real-time GPS tracking. Delivery in under 60 minutes across the city — or it's free.",
+        "body": "Real-time GPS tracking. Delivery in under 60 minutes across Tamil Nadu — or it's free.",
     },
 ]
 
@@ -86,19 +86,19 @@ TESTIMONIALS = [
     {
         "quote": "The biryani I made with their curry cut was the best I've ever cooked. Genuinely.",
         "author": "Razia Begum",
-        "locality": "Frazer Town, Bengaluru",
+        "locality": "Melvisharam, Tamil Nadu",
         "avatar": "R",
     },
     {
         "quote": "No more haggling at the market. Fresh, clean cuts delivered before breakfast. Brilliant.",
         "author": "Mohammed Irfan",
-        "locality": "Shivajinagar",
+        "locality": "Ranipet, Tamil Nadu",
         "avatar": "M",
     },
     {
         "quote": "Ordered the full leg for Eid. It arrived perfectly portioned. The whole family was impressed.",
         "author": "Salma & Family",
-        "locality": "Mosque Road",
+        "locality": "Walajapet, Tamil Nadu",
         "avatar": "S",
     },
 ]
